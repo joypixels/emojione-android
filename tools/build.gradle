@@ -50,8 +50,8 @@ ext {
     artifact = 'tools' // has to be same as your library module name
     libraryDescription = 'A set of methods used to manipulate time object'
 
-    siteUrl = 'https://github.com/jasonamark/emojione'
-    gitUrl = 'https://github.com/jasonamark/emojione.git'
+    siteUrl = 'https://github.com/jasonamark/test-emojione-lib'
+    gitUrl = 'https://github.com/jasonamark/test-emojione-lib.git'
 
     libraryVersion = '1.0'
     developerId = 'jasonamark'
