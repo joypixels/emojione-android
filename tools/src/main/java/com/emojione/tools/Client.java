@@ -212,7 +212,10 @@ public class Client {
             for(String shortname : matchList) {
                 try {
                     if (shortcode_replace.containsKey(shortname)) {
-                        string = string.replace(shortname, shortcode_replace.get(shortname).get(0));
+                        String emojiHex = shortcode_replace.get(shortname).get(1);
+                        String emoji = hexStringToCodePoint(emojiHex);
+
+                        string = string.replace(shortname, emoji);
                     }
                 } catch (Exception e) {
                     Log.e("ShortnameWithUnicode",e.getMessage());
@@ -417,6 +420,11 @@ public class Client {
             delimiter = separator;
         }
         return builder.toString();
+    }
+
+    private String hexStringToCodePoint(String hexString) {
+        int codePoint = Integer.parseInt(hexString, 16 );
+        return new String(new int[]{codePoint}, 0, 1);
     }
 
     /**

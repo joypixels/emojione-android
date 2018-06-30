@@ -46,6 +46,8 @@ public class MainActivity extends AppCompatActivity {
         // Convert shortnames to images
         String result5 = client.shortnameToImage("Hello world! :smile:");
 
+        //editText.setText("Hello world! \uD83D\uDE04");
+        editText.setText("Hello world! :joy: ");
     }
 
     @OnClick({R.id.btnToImage, R.id.btnShortnameToImage,R.id.btnShortnameToUnicode,R.id.btnToShort,R.id.btnUnicodeToImage}) public void submit(Button view) {
