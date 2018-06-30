@@ -4,11 +4,7 @@ import android.util.Log;
 
 import java.net.URLEncoder;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -248,38 +244,6 @@ public class Client {
         }
     }
 
-    /**
-     * @param   @matcher  results of the pattern.
-     * @return  @string  Shortname replacement result.
-     */
-    private String asciiToShortnameCallback(Matcher matches)
-    {
-        ArrayList<String> matchList = new ArrayList<>();
-        while (matches.find()) {
-            matchList.add(matches.group(0));
-        }
-        if(matchList.size()!=4) {
-            return "";
-        } else {
-            LinkedHashMap<String, String> ascii_replace = this.ruleset.getAsciiReplace();
-
-            LinkedHashMap<String, ArrayList<String>> shortcode_replace = this.ruleset.getShortcodeReplace();
-            LinkedHashMap<ArrayList<String>, String> flip_reversed_shortcode_replace = new LinkedHashMap<ArrayList<String>, String>();
-            Set<String> keys = shortcode_replace.keySet();
-            List<String> keyList = new ArrayList<String>(keys);
-            for (int i = keyList.size() - 1; i >= 0; i--) {
-                flip_reversed_shortcode_replace.put(shortcode_replace.get(keyList.get(i)), keyList.get(i));
-            }
-            String shortname = matchList.get(3);
-
-            if(!ascii_replace.containsKey(shortname)){
-                return matchList.get(3);
-            } else {
-                String unicode = ascii_replace.get(shortname);
-                return matchList.get(2) + flip_reversed_shortcode_replace.get(unicode);
-            }
-        }
-    }
 
     /**
      * @param   @matcher  results of the pattern.
