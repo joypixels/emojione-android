@@ -1,26 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_LOG_LEVEL" value="error" />
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="9581237a-7fd4-48bd-a992-ce26446b6f8b" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/tools/src/main/java/com/emojione/tools/Client.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/tools/src/main/java/com/emojione/tools/Ruleset.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/tools/src/main/java/com/emojione/tools/RulesetInterface" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.4/fileContent/fileContent.lock" afterPath="$PROJECT_DIR$/.gradle/4.4/fileContent/fileContent.lock" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.bin" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.lock" afterPath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.lock" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.4/fileHashes/resourceHashesCache.bin" afterPath="$PROJECT_DIR$/.gradle/4.4/fileHashes/resourceHashesCache.bin" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.4/javaCompile/classAnalysis.bin" afterPath="$PROJECT_DIR$/.gradle/4.4/javaCompile/classAnalysis.bin" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.4/javaCompile/jarAnalysis.bin" afterPath="$PROJECT_DIR$/.gradle/4.4/javaCompile/jarAnalysis.bin" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.4/javaCompile/javaCompile.lock" afterPath="$PROJECT_DIR$/.gradle/4.4/javaCompile/javaCompile.lock" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.4/javaCompile/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/4.4/javaCompile/taskHistory.bin" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.4/javaCompile/taskJars.bin" afterPath="$PROJECT_DIR$/.gradle/4.4/javaCompile/taskJars.bin" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.bin" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.lock" afterPath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.lock" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" />
       <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle" afterPath="$PROJECT_DIR$/app/build.gradle" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/emojione/example/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/emojione/example/MainActivity.java" />
-      <change beforePath="$PROJECT_DIR$/tools/src/main/java/com/emojione/tools/tools.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/tools/src/main/java/com/emojione/tools/Client.java" afterPath="$PROJECT_DIR$/tools/src/main/java/com/emojione/tools/Client.java" />
+      <change beforePath="$PROJECT_DIR$/tools/src/main/java/com/emojione/tools/Ruleset.java" afterPath="$PROJECT_DIR$/tools/src/main/java/com/emojione/tools/Ruleset.java" />
+      <change beforePath="$PROJECT_DIR$/tools/src/main/java/com/emojione/tools/RulesetInterface" afterPath="" />
       <change beforePath="$PROJECT_DIR$/tools/tools.iml" afterPath="$PROJECT_DIR$/tools/tools.iml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -35,26 +40,20 @@
       <ProjectState />
     </projectState>
   </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view />
+      </state>
+    </system>
+  </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="Client.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/tools/src/main/java/com/emojione/tools/Client.java">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/emojione/example/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="149">
-              <caret line="303" column="12" lean-forward="false" selection-start-line="303" selection-start-column="12" selection-end-line="303" selection-end-column="12" />
-              <folding>
-                <element signature="e#9484#9511#0" expanded="true" />
-                <element signature="e#9622#9630#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RulesetInterface" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tools/src/main/java/com/emojione/tools/RulesetInterface">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="470">
-              <caret line="35" column="11" lean-forward="true" selection-start-line="35" selection-start-column="11" selection-end-line="35" selection-end-column="40" />
+            <state relative-caret-position="510">
+              <caret line="34" column="79" lean-forward="false" selection-start-line="34" selection-start-column="79" selection-end-line="34" selection-end-column="79" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -62,22 +61,74 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Ruleset.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tools/src/main/java/com/emojione/tools/Ruleset.java">
+      <file leaf-file-name="Client.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/tools/src/main/java/com/emojione/tools/Client.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/emojione/example/MainActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="21" column="8" lean-forward="true" selection-start-line="21" selection-start-column="8" selection-end-line="23" selection-end-column="9" />
-              <folding />
+            <state relative-caret-position="169">
+              <caret line="32" column="4" lean-forward="false" selection-start-line="32" selection-start-column="4" selection-end-line="32" selection-end-column="4" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#20432#20433#0" expanded="true" />
+                <element signature="e#20460#20461#0" expanded="true" />
+                <element signature="e#20502#20503#0" expanded="true" />
+                <element signature="e#20536#20537#0" expanded="true" />
+                <element signature="e#20577#20578#0" expanded="true" />
+                <element signature="e#20615#20616#0" expanded="true" />
+                <element signature="method#setRiskyMatchAscii#0;class#Client#0" expanded="false" />
+                <element signature="e#20767#20768#0" expanded="true" />
+                <element signature="e#20800#20801#0" expanded="true" />
+                <element signature="e#20852#20853#0" expanded="true" />
+                <element signature="e#20896#20897#0" expanded="true" />
+                <element signature="e#20932#20933#0" expanded="true" />
+                <element signature="e#20965#20966#0" expanded="true" />
+                <element signature="e#21017#21018#0" expanded="true" />
+                <element signature="e#21061#21062#0" expanded="true" />
+                <element signature="e#21099#21100#0" expanded="true" />
+                <element signature="e#21134#21135#0" expanded="true" />
+                <element signature="e#21189#21190#0" expanded="true" />
+                <element signature="e#21237#21238#0" expanded="true" />
+                <element signature="e#21272#21273#0" expanded="true" />
+                <element signature="e#21304#21305#0" expanded="true" />
+                <element signature="e#21353#21354#0" expanded="true" />
+                <element signature="e#21395#21396#0" expanded="true" />
+                <element signature="e#21432#21433#0" expanded="true" />
+                <element signature="e#21466#21467#0" expanded="true" />
+                <element signature="e#21520#21521#0" expanded="true" />
+                <element signature="e#21566#21567#0" expanded="true" />
+                <element signature="e#21606#21607#0" expanded="true" />
+                <element signature="e#21643#21644#0" expanded="true" />
+                <element signature="e#21702#21703#0" expanded="true" />
+                <element signature="e#21754#21755#0" expanded="true" />
+                <element signature="e#21787#21788#0" expanded="true" />
+                <element signature="e#21817#21818#0" expanded="true" />
+                <element signature="e#21863#21864#0" expanded="true" />
+                <element signature="e#21901#21902#0" expanded="true" />
+                <element signature="e#21937#21938#0" expanded="true" />
+                <element signature="e#21970#21971#0" expanded="true" />
+                <element signature="e#22021#22022#0" expanded="true" />
+                <element signature="e#22065#22066#0" expanded="true" />
+                <element signature="e#22103#22104#0" expanded="true" />
+                <element signature="e#22138#22139#0" expanded="true" />
+                <element signature="e#22193#22194#0" expanded="true" />
+                <element signature="e#22241#22242#0" expanded="true" />
+                <element signature="e#22280#22281#0" expanded="true" />
+                <element signature="e#22316#22317#0" expanded="true" />
+                <element signature="e#22374#22375#0" expanded="true" />
+                <element signature="e#22424#22425#0" expanded="true" />
+                <element signature="e#22469#22470#0" expanded="true" />
+                <element signature="e#22511#22512#0" expanded="true" />
+                <element signature="method#setUnicode_replaceWith#0;class#Client#0" expanded="false" />
+                <element signature="e#22682#22683#0" expanded="true" />
+                <element signature="e#22718#22719#0" expanded="true" />
+                <element signature="e#22775#22776#0" expanded="true" />
+                <element signature="e#22825#22826#0" expanded="true" />
+                <element signature="e#22864#22865#0" expanded="true" />
+                <element signature="e#22900#22901#0" expanded="true" />
+                <element signature="e#22957#22958#0" expanded="true" />
+                <element signature="e#23007#23008#0" expanded="true" />
+                <element signature="e#23048#23049#0" expanded="true" />
+                <element signature="e#23086#23087#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -85,9 +136,22 @@
       <file leaf-file-name="ActivityThread.java" pinned="false" current-in-tab="false">
         <entry file="file://$ANDROID_SDK_ROOT$/sources/android-27/android/app/ActivityThread.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="159">
+            <state relative-caret-position="526">
               <caret line="2952" column="0" lean-forward="false" selection-start-line="2952" selection-start-column="0" selection-end-line="2952" selection-end-column="0" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Ruleset.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tools/src/main/java/com/emojione/tools/Ruleset.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="17" column="23" lean-forward="false" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
+              <folding>
+                <element signature="e#951756#951757#0" expanded="true" />
+                <element signature="e#951794#951795#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -96,14 +160,41 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>asciiToUnicodeCallback</find>
-      <find>getAsciiReplace</find>
-      <find>ascii_replace</find>
-      <find>asciiToShortnameCallback</find>
-      <find>getUnicodeReplace</find>
-      <find>getUnicodeReplaceGreedy</find>
+      <find>shortnameToImageCallback</find>
+      <find>shortnameToImage</find>
+      <find>asciiToImageCallback</find>
+      <find>startTime</find>
       <find>getShortcodeReplace</find>
+      <find>RulesetI</find>
+      <find>getRuleset</find>
+      <find>\u{</find>
+      <find>shortnameToAscii</find>
+      <find>public</find>
+      <find>asciiToUnicodeCallback</find>
+      <find>getAsciiRegexp</find>
+      <find>asciiRegexp</find>
+      <find>ascii</find>
+      <find>shortcodes</find>
+      <find>shortcodeRegexp</find>
+      <find>unicodeRegexp</find>
+      <find>toImage</find>
+      <find>toshort</find>
+      <find>shortnameToUnicode</find>
+      <find>toShort</find>
+      <find>unicode_replace</find>
+      <find>00f</find>
+      <find>testRegex</find>
+      <find>:smile:</find>
+      <find>toShortCallback</find>
+      <find>smile</find>
+      <find>F09F9884</find>
+      <find>replaceMatchesWithShortname</find>
+      <find>ignoredRegexp</find>
     </findStrings>
+    <replaceStrings>
+      <replace>\\u{</replace>
+      <replace>[a-zA-Z0-9]{4}</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -3420,16 +3511,18 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/src/main/java/com/emojione/example/MainActivity.java" />
         <option value="$PROJECT_DIR$/tools/src/main/java/com/emojione/tools/RulesetInterface" />
+        <option value="$PROJECT_DIR$/tools/src/main/java/com/emojione/tools/Ruleset.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/emojione/example/MainActivity.java" />
         <option value="$PROJECT_DIR$/tools/src/main/java/com/emojione/tools/Client.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="y" value="23" />
-    <option name="width" value="1440" />
-    <option name="height" value="877" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-1919" />
+    <option name="y" value="-628" />
+    <option name="width" value="1919" />
+    <option name="height" value="986" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -3447,35 +3540,13 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="Scope" />
-      <pane id="ProjectPane" />
       <pane id="AndroidView">
         <subPane>
           <expand>
             <path>
               <item name="example" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-            </path>
-            <path>
-              <item name="example" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-            </path>
-            <path>
-              <item name="example" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="example" type="cbb59c9e:AndroidPsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="example" type="1abcf292:AndroidViewProjectNode" />
               <item name="tools" type="feadf853:AndroidModuleNode" />
-            </path>
-            <path>
-              <item name="example" type="1abcf292:AndroidViewProjectNode" />
-              <item name="tools" type="feadf853:AndroidModuleNode" />
-              <item name="manifests" type="f94875db:AndroidManifestsGroupNode" />
             </path>
             <path>
               <item name="example" type="1abcf292:AndroidViewProjectNode" />
@@ -3488,22 +3559,19 @@
               <item name="java" type="edd41e36:AndroidSourceTypeNode" />
               <item name="tools" type="cbb59c9e:AndroidPsiDirectoryNode" />
             </path>
-            <path>
-              <item name="example" type="1abcf292:AndroidViewProjectNode" />
-              <item name="tools" type="feadf853:AndroidModuleNode" />
-              <item name="res" type="d4f16f75:AndroidResFolderNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scratches" />
       <pane id="PackagesPane" />
+      <pane id="ProjectPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="android.sdk.path" value="$ANDROID_SDK_ROOT$" />
     <property name="settings.editor.selected.configurable" value="android.sdk-updates" />
-    <property name="android.project.structure.last.selected" value="SDK Location" />
+    <property name="android.project.structure.last.selected" value="app" />
     <property name="android.project.structure.proportion" value="0.15" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="device.picker.selection" value="98895441575436574d" />
@@ -3667,6 +3735,18 @@
       <patterns />
       <method />
     </configuration>
+    <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <module name="example" />
+      <envs />
+    </configuration>
     <configuration name="&lt;template&gt;" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" default="true" selected="false">
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
     </configuration>
@@ -3688,39 +3768,39 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="877" extended-state="6" />
+    <frame x="-1919" y="-628" width="1919" height="986" extended-state="0" />
     <editor active="true" />
     <layout>
+      <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22853829" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21173105" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32946634" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13745338" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.328341" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32949308" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Fabric" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1949934" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Device File Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Fabric" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Device File Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27073732" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -3728,39 +3808,23 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="4" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/tools/src/main/java/com/emojione/tools/Client.java</url>
+          <line>358</line>
+          <properties />
+          <option name="timeStamp" value="32" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="35" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$ANDROID_SDK_ROOT$/sources/android-27/android/app/ActivityThread.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="159">
-          <caret line="2952" column="0" lean-forward="false" selection-start-line="2952" selection-start-column="0" selection-end-line="2952" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/emojione/example/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="21" column="8" lean-forward="true" selection-start-line="21" selection-start-column="8" selection-end-line="23" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tools/src/main/java/com/emojione/tools/Ruleset.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tools/src/main/java/com/emojione/tools/RulesetInterface">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="470">
-          <caret line="35" column="11" lean-forward="true" selection-start-line="35" selection-start-column="11" selection-end-line="35" selection-end-column="40" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -3769,11 +3833,189 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tools/src/main/java/com/emojione/tools/Client.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="303" column="12" lean-forward="false" selection-start-line="303" selection-start-column="12" selection-end-line="303" selection-end-column="12" />
+        <state relative-caret-position="915">
+          <caret line="61" column="0" lean-forward="false" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
           <folding>
-            <element signature="e#9484#9511#0" expanded="true" />
-            <element signature="e#9622#9630#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#20432#20433#0" expanded="true" />
+            <element signature="e#20460#20461#0" expanded="true" />
+            <element signature="e#20502#20503#0" expanded="true" />
+            <element signature="e#20536#20537#0" expanded="true" />
+            <element signature="e#20577#20578#0" expanded="true" />
+            <element signature="e#20615#20616#0" expanded="true" />
+            <element signature="method#setRiskyMatchAscii#0;class#Client#0" expanded="false" />
+            <element signature="e#20767#20768#0" expanded="true" />
+            <element signature="e#20800#20801#0" expanded="true" />
+            <element signature="e#20852#20853#0" expanded="true" />
+            <element signature="e#20896#20897#0" expanded="true" />
+            <element signature="e#20932#20933#0" expanded="true" />
+            <element signature="e#20965#20966#0" expanded="true" />
+            <element signature="e#21017#21018#0" expanded="true" />
+            <element signature="e#21061#21062#0" expanded="true" />
+            <element signature="e#21099#21100#0" expanded="true" />
+            <element signature="e#21134#21135#0" expanded="true" />
+            <element signature="e#21189#21190#0" expanded="true" />
+            <element signature="e#21237#21238#0" expanded="true" />
+            <element signature="e#21272#21273#0" expanded="true" />
+            <element signature="e#21304#21305#0" expanded="true" />
+            <element signature="e#21353#21354#0" expanded="true" />
+            <element signature="e#21395#21396#0" expanded="true" />
+            <element signature="e#21432#21433#0" expanded="true" />
+            <element signature="e#21466#21467#0" expanded="true" />
+            <element signature="e#21520#21521#0" expanded="true" />
+            <element signature="e#21566#21567#0" expanded="true" />
+            <element signature="e#21606#21607#0" expanded="true" />
+            <element signature="e#21643#21644#0" expanded="true" />
+            <element signature="e#21702#21703#0" expanded="true" />
+            <element signature="e#21754#21755#0" expanded="true" />
+            <element signature="e#21787#21788#0" expanded="true" />
+            <element signature="e#21817#21818#0" expanded="true" />
+            <element signature="e#21863#21864#0" expanded="true" />
+            <element signature="e#21901#21902#0" expanded="true" />
+            <element signature="e#21937#21938#0" expanded="true" />
+            <element signature="e#21970#21971#0" expanded="true" />
+            <element signature="e#22021#22022#0" expanded="true" />
+            <element signature="e#22065#22066#0" expanded="true" />
+            <element signature="e#22103#22104#0" expanded="true" />
+            <element signature="e#22138#22139#0" expanded="true" />
+            <element signature="e#22193#22194#0" expanded="true" />
+            <element signature="e#22241#22242#0" expanded="true" />
+            <element signature="e#22280#22281#0" expanded="true" />
+            <element signature="e#22316#22317#0" expanded="true" />
+            <element signature="e#22374#22375#0" expanded="true" />
+            <element signature="e#22424#22425#0" expanded="true" />
+            <element signature="e#22469#22470#0" expanded="true" />
+            <element signature="e#22511#22512#0" expanded="true" />
+            <element signature="method#setUnicode_replaceWith#0;class#Client#0" expanded="false" />
+            <element signature="e#22682#22683#0" expanded="true" />
+            <element signature="e#22718#22719#0" expanded="true" />
+            <element signature="e#22775#22776#0" expanded="true" />
+            <element signature="e#22825#22826#0" expanded="true" />
+            <element signature="e#22864#22865#0" expanded="true" />
+            <element signature="e#22900#22901#0" expanded="true" />
+            <element signature="e#22957#22958#0" expanded="true" />
+            <element signature="e#23007#23008#0" expanded="true" />
+            <element signature="e#23048#23049#0" expanded="true" />
+            <element signature="e#23086#23087#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tools/src/main/java/com/emojione/tools/Ruleset.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="64395">
+          <caret line="4293" column="131" lean-forward="false" selection-start-line="4293" selection-start-column="29" selection-end-line="4293" selection-end-column="131" />
+          <folding>
+            <element signature="e#951756#951757#0" expanded="true" />
+            <element signature="e#951794#951795#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tools/src/main/java/com/emojione/tools/RulesetInterface" />
+    <entry file="file://$ANDROID_SDK_ROOT$/sources/android-27/java/lang/String.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="116" column="19" lean-forward="false" selection-start-line="116" selection-start-column="19" selection-end-line="116" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$ANDROID_SDK_ROOT$/sources/android-27/android/app/ActivityThread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="526">
+          <caret line="2952" column="0" lean-forward="false" selection-start-line="2952" selection-start-column="0" selection-end-line="2952" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tools/src/main/java/com/emojione/tools/Ruleset.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="17" column="23" lean-forward="false" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
+          <folding>
+            <element signature="e#951756#951757#0" expanded="true" />
+            <element signature="e#951794#951795#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/emojione/example/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="34" column="79" lean-forward="false" selection-start-line="34" selection-start-column="79" selection-end-line="34" selection-end-column="79" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tools/src/main/java/com/emojione/tools/Client.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="169">
+          <caret line="32" column="4" lean-forward="false" selection-start-line="32" selection-start-column="4" selection-end-line="32" selection-end-column="4" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#20432#20433#0" expanded="true" />
+            <element signature="e#20460#20461#0" expanded="true" />
+            <element signature="e#20502#20503#0" expanded="true" />
+            <element signature="e#20536#20537#0" expanded="true" />
+            <element signature="e#20577#20578#0" expanded="true" />
+            <element signature="e#20615#20616#0" expanded="true" />
+            <element signature="method#setRiskyMatchAscii#0;class#Client#0" expanded="false" />
+            <element signature="e#20767#20768#0" expanded="true" />
+            <element signature="e#20800#20801#0" expanded="true" />
+            <element signature="e#20852#20853#0" expanded="true" />
+            <element signature="e#20896#20897#0" expanded="true" />
+            <element signature="e#20932#20933#0" expanded="true" />
+            <element signature="e#20965#20966#0" expanded="true" />
+            <element signature="e#21017#21018#0" expanded="true" />
+            <element signature="e#21061#21062#0" expanded="true" />
+            <element signature="e#21099#21100#0" expanded="true" />
+            <element signature="e#21134#21135#0" expanded="true" />
+            <element signature="e#21189#21190#0" expanded="true" />
+            <element signature="e#21237#21238#0" expanded="true" />
+            <element signature="e#21272#21273#0" expanded="true" />
+            <element signature="e#21304#21305#0" expanded="true" />
+            <element signature="e#21353#21354#0" expanded="true" />
+            <element signature="e#21395#21396#0" expanded="true" />
+            <element signature="e#21432#21433#0" expanded="true" />
+            <element signature="e#21466#21467#0" expanded="true" />
+            <element signature="e#21520#21521#0" expanded="true" />
+            <element signature="e#21566#21567#0" expanded="true" />
+            <element signature="e#21606#21607#0" expanded="true" />
+            <element signature="e#21643#21644#0" expanded="true" />
+            <element signature="e#21702#21703#0" expanded="true" />
+            <element signature="e#21754#21755#0" expanded="true" />
+            <element signature="e#21787#21788#0" expanded="true" />
+            <element signature="e#21817#21818#0" expanded="true" />
+            <element signature="e#21863#21864#0" expanded="true" />
+            <element signature="e#21901#21902#0" expanded="true" />
+            <element signature="e#21937#21938#0" expanded="true" />
+            <element signature="e#21970#21971#0" expanded="true" />
+            <element signature="e#22021#22022#0" expanded="true" />
+            <element signature="e#22065#22066#0" expanded="true" />
+            <element signature="e#22103#22104#0" expanded="true" />
+            <element signature="e#22138#22139#0" expanded="true" />
+            <element signature="e#22193#22194#0" expanded="true" />
+            <element signature="e#22241#22242#0" expanded="true" />
+            <element signature="e#22280#22281#0" expanded="true" />
+            <element signature="e#22316#22317#0" expanded="true" />
+            <element signature="e#22374#22375#0" expanded="true" />
+            <element signature="e#22424#22425#0" expanded="true" />
+            <element signature="e#22469#22470#0" expanded="true" />
+            <element signature="e#22511#22512#0" expanded="true" />
+            <element signature="method#setUnicode_replaceWith#0;class#Client#0" expanded="false" />
+            <element signature="e#22682#22683#0" expanded="true" />
+            <element signature="e#22718#22719#0" expanded="true" />
+            <element signature="e#22775#22776#0" expanded="true" />
+            <element signature="e#22825#22826#0" expanded="true" />
+            <element signature="e#22864#22865#0" expanded="true" />
+            <element signature="e#22900#22901#0" expanded="true" />
+            <element signature="e#22957#22958#0" expanded="true" />
+            <element signature="e#23007#23008#0" expanded="true" />
+            <element signature="e#23048#23049#0" expanded="true" />
+            <element signature="e#23086#23087#0" expanded="true" />
           </folding>
         </state>
       </provider>
