@@ -22,17 +22,17 @@ public class MainActivity extends AppCompatActivity {
         // Convert native unicode emoji to shortnames
         String result1 = client.toShort("Hello world! \uD83D\uDE04");
 
+        // Convert shortnames to native unicode
+        String result2 = client.shortnameToUnicode(" <3 Hello world! :smile:");
+
         // Convert native unicode emoji and shortnames directly to images
-        String result2 = client.toImage("Hello world! :smile: \uD83D\uDE04");
+        String result3 = client.toImage("Hello world! :smile: \uD83D\uDE04");
 
         // Convert native unicode emoji directly to images
-        String result3 = client.unicodeToImage("Hello world! \uD83D\uDE04");
+        String result4 = client.unicodeToImage("Hello world! \uD83D\uDE04");
 
         // Convert shortnames to images
-        String result4 = client.shortnameToImage("Hello world! :smile:");
-
-        // Convert shortnames to native unicode
-        String result5 = client.shortnameToUnicode(" <3 Hello world! :smile:");
+        String result5 = client.shortnameToImage("Hello world! :smile:");
 
     }
 }

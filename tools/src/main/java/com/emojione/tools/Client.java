@@ -14,8 +14,8 @@ import java.util.regex.Pattern;
 
 public class Client {
 
-    private boolean ascii = true;              // convert ascii smileys?
-    private boolean riskyMatchAscii = true;    // set true to match ascii without leading/trailing space char
+    private boolean ascii = true;               // convert ascii smileys?
+    private boolean riskyMatchAscii = true;     // set true to match ascii without leading/trailing space char
     private boolean shortcodes = true;          // convert shortcodes?
     private boolean unicodeAlt = true;          // use the unicode char as the alt attribute (makes copy and pasting the resulting text better)
     private String emojiVersion = "3.1";
@@ -26,11 +26,10 @@ public class Client {
     private String spriteSize = "32";           // available sizes are '32' and '64'
     private String imagePathPNG = "https://cdn.jsdelivr.net/emojione/assets";
     private boolean imageTitleTag = true;
-    private boolean unicode_replaceWith = false;
 
     private String unicodeRegexp = "(?:\\x{1F3F3}\\x{FE0F}?\\x{200D}?\\x{1F308}|\\x{1F441}\\x{FE0F}?\\x{200D}?\\x{1F5E8}\\x{FE0F}?)|[\\x{0023}-\\x{0039}]\\x{FE0F}?\\x{20e3}|(?:\\x{1F3F4}[\\x{E0060}-\\x{E00FF}]{1,6})|[\\x{1F1E0}-\\x{1F1FF}]{2}|(?:[\\x{1F468}\\x{1F469}])\\x{FE0F}?[\\x{1F3FA}-\\x{1F3FF}]?\\x{200D}?(?:[\\x{2695}\\x{2696}\\x{2708}\\x{1F4BB}\\x{1F4BC}\\x{1F527}\\x{1F52C}\\x{1F680}\\x{1F692}\\x{1F33E}-\\x{1F3ED}])|[\\x{1F468}-\\x{1F469}\\x{1F9D0}-\\x{1F9DF}][\\x{1F3FA}-\\x{1F3FF}]?\\x{200D}?[\\x{2640}\\x{2642}\\x{2695}\\x{2696}\\x{2708}]?\\x{FE0F}?|(?:[\\x{2764}\\x{1F466}-\\x{1F469}\\x{1F48B}][\\x{200D}\\x{FE0F}]{0,2})|[\\x{2764}\\x{1F466}-\\x{1F469}\\x{1F48B}]|(?:[\\x{2764}\\x{1F466}-\\x{1F469}\\x{1F48B}]\\x{FE0F}?)|(?:[\\x{1f46e}\\x{1F468}\\x{1F469}\\x{1f575}\\x{1f471}-\\x{1f487}\\x{1F645}-\\x{1F64E}\\x{1F926}\\x{1F937}]|[\\x{1F460}-\\x{1F482}\\x{1F3C3}-\\x{1F3CC}\\x{26F9}\\x{1F486}\\x{1F487}\\x{1F6A3}-\\x{1F6B6}\\x{1F938}-\\x{1F93E}]|\\x{1F46F})\\x{FE0F}?[\\x{1F3FA}-\\x{1F3FF}]?\\x{200D}?[\\x{2640}\\x{2642}]?\\x{FE0F}?|(?:[\\x{26F9}\\x{261D}\\x{270A}-\\x{270D}\\x{1F385}-\\x{1F3CC}\\x{1F442}-\\x{1F4AA}\\x{1F574}-\\x{1F596}\\x{1F645}-\\x{1F64F}\\x{1F6A3}-\\x{1F6CC}\\x{1F918}-\\x{1F93E}]\\x{FE0F}?[\\x{1F3FA}-\\x{1F3FF}])|(?:[\\x{2194}-\\x{2199}\\x{21a9}-\\x{21aa}]\\x{FE0F}?|[\\x{0023}-\\x{002a}]|[\\x{3030}\\x{303d}]\\x{FE0F}?|(?:[\\x{1F170}-\\x{1F171}]|[\\x{1F17E}-\\x{1F17F}]|\\x{1F18E}|[\\x{1F191}-\\x{1F19A}]|[\\x{1F1E6}-\\x{1F1FF}])\\x{FE0F}?|\\x{24c2}\\x{FE0F}?|[\\x{3297}\\x{3299}]\\x{FE0F}?|(?:[\\x{1F201}-\\x{1F202}]|\\x{1F21A}|\\x{1F22F}|[\\x{1F232}-\\x{1F23A}]|[\\x{1F250}-\\x{1F251}])\\x{FE0F}?|[\\x{203c}\\x{2049}]\\x{FE0F}?|[\\x{25aa}-\\x{25ab}\\x{25b6}\\x{25c0}\\x{25fb}-\\x{25fe}]\\x{FE0F}?|[\\x{00a9}\\x{00ae}]\\x{FE0F}?|[\\x{2122}\\x{2139}]\\x{FE0F}?|\\x{1F004}\\x{FE0F}?|[\\x{2b05}-\\x{2b07}\\x{2b1b}-\\x{2b1c}\\x{2b50}\\x{2b55}]\\x{FE0F}?|[\\x{231a}-\\x{231b}\\x{2328}\\x{23cf}\\x{23e9}-\\x{23f3}\\x{23f8}-\\x{23fa}]\\x{FE0F}?|\\x{1F0CF}|[\\x{2934}\\x{2935}]\\x{FE0F}?)|[\\x{2700}-\\x{27bf}]\\x{FE0F}?|[\\x{1F000}-\\x{1F6FF}\\x{1F900}-\\x{1F9FF}]\\x{FE0F}?|[\\x{2600}-\\x{26ff}]\\x{FE0F}?|[\\x{0030}-\\x{0039}]\\x{FE0F}";
-    private String shortcodeRegexp = ":([-+\\w]+):";
-    
+    private String shortnameRegexp = ":([-+\\w]+):";
+
     private Ruleset ruleset = new Ruleset();
 
     public void Client() {
@@ -47,7 +46,7 @@ public class Client {
     public String toShort(String string) {
         Pattern pattern = Pattern.compile(this.unicodeRegexp);
         Matcher matcher = pattern.matcher(string);
-        return this.replaceMatchesWithShortname(string, matcher);
+        return this.replaceUnicodeWithShortname(string, matcher);
     }
 
     /**
@@ -73,16 +72,15 @@ public class Client {
      */
     public String shortnameToUnicode(String string) {
         if(this.shortcodes) {
-            Pattern pattern = Pattern.compile(this.shortcodeRegexp);
+            Pattern pattern = Pattern.compile(this.shortnameRegexp);
             Matcher matches = pattern.matcher(string);
-            string = shortnameToUnicodeCallback(matches);
+            string = replaceShortnameWithUnicode(string, matches);
         }
         if(this.ascii) {
-            Ruleset ruleset = getRuleset();
-            String asciiRegexp = ruleset.getAsciiRegexp();
+            String asciiRegexp = this.ruleset.getAsciiRegexp();
             String asciiRX = (this.riskyMatchAscii) ? "|(()"+asciiRegexp+"())" : "|((\\s|^)"+asciiRegexp+"(?=\\s|$|[!,.?]))";
 
-            Pattern pattern = Pattern.compile("/"+this.ignoredRegexp+asciiRX+"/S");
+            Pattern pattern = Pattern.compile(asciiRX);
             Matcher matches = pattern.matcher(string);
             string = asciiToUnicodeCallback(matches);
         }
@@ -97,17 +95,15 @@ public class Client {
      */
     public String shortnameToImage(String string) {
         if(this.shortcodes) {
-            Pattern pattern = Pattern.compile("/"+this.ignoredRegexp+"|("+this.shortcodeRegexp+")/Si");
+            Pattern pattern = Pattern.compile(this.shortnameRegexp);
             Matcher matches = pattern.matcher(string);
             string = shortnameToImageCallback(matches);
         }
-        if (this.ascii)
-        {
-            Ruleset ruleset = this.getRuleset();
-            String asciiRegexp = ruleset.getAsciiRegexp();
+        if (this.ascii) {
+            String asciiRegexp = this.ruleset.getAsciiRegexp();
             String asciiRX = (this.riskyMatchAscii) ? "|(()" + asciiRegexp + "())" : "|((\\s|^)"+asciiRegexp+"(?=\\s|$|[!,.?]))";
 
-            Pattern pattern = Pattern.compile("/"+this.ignoredRegexp+asciiRX+"/S");
+            Pattern pattern = Pattern.compile(asciiRX);
             Matcher matches = pattern.matcher(string);
             string = asciiToImageCallback(matches);
         }
@@ -121,15 +117,14 @@ public class Client {
      * @return  @string  String with appropriate html for rendering emoji.
      */
     public String unicodeToImage(String string) {
-        Pattern pattern = Pattern.compile("/" + this.ignoredRegexp + "|" + this.unicodeRegexp + "/u");
+        Pattern pattern = Pattern.compile(this.unicodeRegexp);
         Matcher matcher = pattern.matcher(string);
-        string = this.replaceMatchesWithShortname(string, matcher);
+        string = this.replaceUnicodeWithShortname(string, matcher);
         if(this.ascii) {
-            Ruleset ruleset = this.getRuleset();
-            String asciiRegexp = ruleset.getAsciiRegexp();
+            String asciiRegexp = this.ruleset.getAsciiRegexp();
             String asciiRX = (this.riskyMatchAscii) ? "|(()" + asciiRegexp + "())" : "|((\\s|^)"+asciiRegexp+"(?=\\s|$|[!,.?]))";
 
-            pattern = Pattern.compile("/"+this.ignoredRegexp+asciiRX+"/S");
+            pattern = Pattern.compile(asciiRX);
             matcher = pattern.matcher(string);
             string = asciiToUnicodeCallback(matcher);
         }
@@ -162,8 +157,7 @@ public class Client {
         if(matchList.size()<2) {
             return "";
         } else {
-            Ruleset ruleset = this.getRuleset();
-            LinkedHashMap<String, ArrayList<String>> shortcode_replace = ruleset.getShortcodeReplace();
+            LinkedHashMap<String, ArrayList<String>> shortcode_replace = this.ruleset.getShortcodeReplace();
 
             String shortname = matchList.get(1);
 
@@ -201,35 +195,46 @@ public class Client {
      * @return  string  String with ascii replacements.
      */
     private String shortnameToAscii(String string) {
-        Pattern pattern = Pattern.compile("/"+this.ignoredRegexp+"|("+this.shortcodeRegexp+")/Si");
+        Pattern pattern = Pattern.compile(this.shortnameRegexp);
         Matcher matches = pattern.matcher(string);
-        return shortnameToUnicodeCallback(matches);
+        return replaceShortnameWithUnicode(string, matches);
     }
 
     /**
      * @param   @matcher  results of the pattern.
      * @return  @string  Unicode replacement result.
      */
-    private String shortnameToUnicodeCallback(Matcher matches) {
+    private String replaceShortnameWithUnicode(String string, Matcher matcher) {
         ArrayList<String> matchList = new ArrayList<>();
-        while (matches.find()) {
-            matchList.add(matches.group(0));
+        while (matcher.find()) {
+            matchList.add(matcher.group(0));
         }
-        if(matchList.size()<2) {
-            return "";
+        if(matchList.size()==0) {
+            return string;
         } else {
-            Ruleset ruleset = this.getRuleset();
-            LinkedHashMap<String, String> unicode_replace = ruleset.getUnicodeReplace();
-            LinkedHashMap<String, ArrayList<String>> shortcode_replace = ruleset.getShortcodeReplace();
+            LinkedHashMap<String, String> unicode_replace = this.ruleset.getUnicodeReplace();
+            LinkedHashMap<String, ArrayList<String>> shortcode_replace = this.ruleset.getShortcodeReplace();
 
-            String shortname = matchList.get(1);
+            for(String shortname : matchList) {
+                try {
+                    StringBuilder stringBuilder = new StringBuilder();
+                    byte[] xxx = shortname.getBytes("UTF-8");
+                    String hexString = "";
+                    for (byte x : xxx) {
+                        stringBuilder.append(String.format("%02X", x));
+                    }
 
-            if(shortcode_replace.containsKey(shortname)) {
-                return matchList.get(0);
+                    if (unicode_replace.containsKey(stringBuilder.toString())) {
+                        string = string.replace(shortname, unicode_replace.get(stringBuilder.toString()));
+                    }
+                    if (shortcode_replace.containsKey(stringBuilder.toString())) {
+                        string = string.replace(shortname, shortcode_replace.get(stringBuilder.toString()).get(0));
+                    }
+                } catch (Exception e) {
+                    Log.e("MatchesWithShortnam",e.getMessage());
+                }
             }
-
-            String unicode = shortcode_replace.get(shortname).get(0);
-            return this.convert(unicode);
+            return string;
         }
     }
 
@@ -245,9 +250,8 @@ public class Client {
         if(matchList.size()!=4) {
             return "";
         } else {
-            Ruleset ruleset = this.getRuleset();
-            LinkedHashMap<String, String> ascii_replace = ruleset.getAsciiReplace();
-            LinkedHashMap<String, ArrayList<String>> shortcode_replace = ruleset.getShortcodeReplace();
+            LinkedHashMap<String, String> ascii_replace = this.ruleset.getAsciiReplace();
+            LinkedHashMap<String, ArrayList<String>> shortcode_replace = this.ruleset.getShortcodeReplace();
             String ascii = matchList.get(3);
 
             String shortname = ascii_replace.get(ascii);
@@ -269,10 +273,9 @@ public class Client {
         if(matchList.size()!=4) {
             return "";
         } else {
-            Ruleset ruleset = this.getRuleset();
-            LinkedHashMap<String, String> ascii_replace = ruleset.getAsciiReplace();
+            LinkedHashMap<String, String> ascii_replace = this.ruleset.getAsciiReplace();
 
-            LinkedHashMap<String, ArrayList<String>> shortcode_replace = ruleset.getShortcodeReplace();
+            LinkedHashMap<String, ArrayList<String>> shortcode_replace = this.ruleset.getShortcodeReplace();
             LinkedHashMap<ArrayList<String>, String> flip_reversed_shortcode_replace = new LinkedHashMap<ArrayList<String>, String>();
             Set<String> keys = shortcode_replace.keySet();
             List<String> keyList = new ArrayList<String>(keys);
@@ -303,9 +306,8 @@ public class Client {
         if(matchList.size()!=4) {
             return "";
         } else {
-            Ruleset ruleset = this.getRuleset();
-            LinkedHashMap<String, String> ascii_replace = ruleset.getAsciiReplace();
-            LinkedHashMap<String, ArrayList<String>> shortcode_replace = ruleset.getShortcodeReplace();
+            LinkedHashMap<String, String> ascii_replace = this.ruleset.getAsciiReplace();
+            LinkedHashMap<String, ArrayList<String>> shortcode_replace = this.ruleset.getShortcodeReplace();
 
             String ascii = URLEncoder.encode(matchList.get(3));
             if(!ascii_replace.containsKey(ascii)){
@@ -338,7 +340,7 @@ public class Client {
      * @param   @matcher  results of the pattern.
      * @return  @string  shortname result
      */
-    private String replaceMatchesWithShortname(String string, Matcher matcher) {
+    private String replaceUnicodeWithShortname(String string, Matcher matcher) {
         ArrayList<String> matchList = new ArrayList<>();
         while (matcher.find()) {
             matchList.add(matcher.group(0));
@@ -346,18 +348,17 @@ public class Client {
         if(matchList.size()==0) {
             return string;
         } else {
-            Ruleset ruleset = this.getRuleset();
-            LinkedHashMap<String, String> unicode_replace = ruleset.getUnicodeReplace();
-            for(String match : matchList) {
+            LinkedHashMap<String, String> unicode_replace = this.ruleset.getUnicodeReplace();
+            for(String unicode : matchList) {
                 try {
                     StringBuilder stringBuilder = new StringBuilder();
-                    byte[] xxx = match.getBytes("UTF-8");
+                    byte[] xxx = unicode.getBytes("UTF-8");
                     String hexString = "";
                     for (byte x : xxx) {
                         stringBuilder.append(String.format("%02X", x));
                     }
                     if (unicode_replace.containsKey(stringBuilder.toString())) {
-                        string = string.replace(match, unicode_replace.get(stringBuilder.toString()));
+                        string = string.replace(unicode, unicode_replace.get(stringBuilder.toString()));
                     }
                 } catch (Exception e) {
                     Log.e("MatchesWithShortnam",e.getMessage());
@@ -380,10 +381,9 @@ public class Client {
         if(matchList.size()==0) {
             return "";
         } else {
-            Ruleset ruleset = this.getRuleset();
-            LinkedHashMap<String, ArrayList<String>> shortcode_replace = ruleset.getShortcodeReplace();
-            LinkedHashMap<String, String> unicode_replace = ruleset.getUnicodeReplace();
-            LinkedHashMap<String, String> unicode_replace_greedy = ruleset.getUnicodeReplaceGreedy();
+            LinkedHashMap<String, ArrayList<String>> shortcode_replace = this.ruleset.getShortcodeReplace();
+            LinkedHashMap<String, String> unicode_replace = this.ruleset.getUnicodeReplace();
+            LinkedHashMap<String, String> unicode_replace_greedy = this.ruleset.getUnicodeReplaceGreedy();
 
             String unicode = matchList.get(0).toUpperCase();
 
@@ -465,12 +465,6 @@ public class Client {
      *
      * @return RulesetInterface The Ruleset
      */
-    private Ruleset getRuleset() {
-        if ( this.ruleset == null ) {
-            this.ruleset = new Ruleset();
-        }
-        return this.ruleset;
-    }
 
     public boolean is$ascii() {
         return ascii;
@@ -544,28 +538,16 @@ public class Client {
     public void setImageTitleTag(boolean imageTitleTag) {
         this.imageTitleTag = imageTitleTag;
     }
-    public boolean isUnicode_replaceWith() {
-        return unicode_replaceWith;
-    }
-    public void setUnicode_replaceWith(boolean unicode_replaceWith) {
-        this.unicode_replaceWith = unicode_replaceWith;
-    }
-    public String getIgnoredRegexp() {
-        return ignoredRegexp;
-    }
-    public void setIgnoredRegexp(String ignoredRegexp) {
-        this.ignoredRegexp = ignoredRegexp;
-    }
     public String getUnicodeRegexp() {
         return unicodeRegexp;
     }
     public void setUnicodeRegexp(String unicodeRegexp) {
         this.unicodeRegexp = unicodeRegexp;
     }
-    public String getShortcodeRegexp() {
-        return shortcodeRegexp;
+    public String getshortnameRegexp() {
+        return shortnameRegexp;
     }
-    public void setShortcodeRegexp(String shortcodeRegexp) {
-        this.shortcodeRegexp = shortcodeRegexp;
+    public void setshortnameRegexp(String shortnameRegexp) {
+        this.shortnameRegexp = shortnameRegexp;
     }
 }
