@@ -17,9 +17,6 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-    lintOptions {
-        tasks.lint.enabled = false
-    }
 }
 
 dependencies {
@@ -39,29 +36,3 @@ buildscript {
         classpath 'com.android.tools.build:gradle:1.1.0'
     }
 }
-
-ext {
-    bintrayRepo = 'emojione' // your repo name
-    bintrayName = 'tools' // has to be same as your library module name
-
-    publishedGroupId = 'com.emojione.tools' // your module package name
-    libraryName = 'tools'
-
-    artifact = 'tools' // has to be same as your library module name
-    libraryDescription = 'A set of methods used to manipulate time object'
-
-    siteUrl = 'https://github.com/jasonamark/test-emojione-lib'
-    gitUrl = 'https://github.com/jasonamark/test-emojione-lib.git'
-
-    libraryVersion = '1.0'
-    developerId = 'jasonamark'
-    developerName = 'Jason Mark'
-    developerEmail = 'jason.a.mark@gmail.com.com'
-
-    licenseName = 'The Apache Software License, Version 2.0'
-    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
-    allLicenses = ["Apache-2.0"]
-}
-
-apply from: 'https://raw.githubusercontent.com/numetriclabz/jcenter/master/installv.gradle'
-apply from: 'https://raw.githubusercontent.com/numetriclabz/jcenter/master/bintrayv.gradle'
