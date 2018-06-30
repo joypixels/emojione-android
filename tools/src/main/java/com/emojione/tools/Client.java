@@ -212,26 +212,14 @@ public class Client {
         if(matchList.size()==0) {
             return string;
         } else {
-            LinkedHashMap<String, String> unicode_replace = this.ruleset.getUnicodeReplace();
             LinkedHashMap<String, ArrayList<String>> shortcode_replace = this.ruleset.getShortcodeReplace();
-
             for(String shortname : matchList) {
                 try {
-                    StringBuilder stringBuilder = new StringBuilder();
-                    byte[] xxx = shortname.getBytes("UTF-8");
-                    String hexString = "";
-                    for (byte x : xxx) {
-                        stringBuilder.append(String.format("%02X", x));
-                    }
-
-                    if (unicode_replace.containsKey(stringBuilder.toString())) {
-                        string = string.replace(shortname, unicode_replace.get(stringBuilder.toString()));
-                    }
-                    if (shortcode_replace.containsKey(stringBuilder.toString())) {
-                        string = string.replace(shortname, shortcode_replace.get(stringBuilder.toString()).get(0));
+                    if (shortcode_replace.containsKey(shortname)) {
+                        string = string.replace(shortname, "\\u" + shortcode_replace.get(shortname).get(0));
                     }
                 } catch (Exception e) {
-                    Log.e("MatchesWithShortnam",e.getMessage());
+                    Log.e("ShortnameWithUnicode",e.getMessage());
                 }
             }
             return string;
