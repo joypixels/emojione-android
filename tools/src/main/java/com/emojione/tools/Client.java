@@ -11,7 +11,7 @@ import java.util.regex.Pattern;
 public class Client {
 
     private boolean ascii = true;               // convert ascii smileys?
-    private boolean riskyMatchAscii = true;     // set true to match ascii without leading/trailing space char
+    private boolean riskyMatchAscii = false;     // set true to match ascii without leading/trailing space char
     private boolean shortcodes = true;          // convert shortcodes?
     private boolean unicodeAlt = true;          // use the unicode char as the alt attribute (makes copy and pasting the resulting text better)
     private String emojiVersion = "3.1";
@@ -74,11 +74,11 @@ public class Client {
         }
         if(this.ascii) {
             String asciiRegexp = this.ruleset.getAsciiRegexp();
-            String asciiRX = (this.riskyMatchAscii) ? "|(()"+asciiRegexp+"())" : "|((\\s|^)"+asciiRegexp+"(?=\\s|$|[!,.?]))";
+            String asciiRX = (this.riskyMatchAscii) ? "(()"+asciiRegexp+"())" : "((\\s|^)"+asciiRegexp+"(?=\\s|$|[!,.?]))";
 
             Pattern pattern = Pattern.compile(asciiRX);
             Matcher matches = pattern.matcher(string);
-            string = asciiToUnicodeCallback(matches);
+            string = replaceAsciiWithUnicode(string, matches);
         }
         return string;
     }
@@ -122,7 +122,7 @@ public class Client {
 
             pattern = Pattern.compile(asciiRX);
             matcher = pattern.matcher(string);
-            string = asciiToUnicodeCallback(matcher);
+            string = replaceAsciiWithUnicode(string, matcher);
         }
         return string;
     }
@@ -212,7 +212,7 @@ public class Client {
             for(String shortname : matchList) {
                 try {
                     if (shortcode_replace.containsKey(shortname)) {
-                        string = string.replace(shortname, "\\u" + shortcode_replace.get(shortname).get(0));
+                        string = string.replace(shortname, shortcode_replace.get(shortname).get(0));
                     }
                 } catch (Exception e) {
                     Log.e("ShortnameWithUnicode",e.getMessage());
@@ -226,24 +226,31 @@ public class Client {
      * @param   @matcher  results of the pattern.
      * @return  @string  Unicode replacement result.
      */
-    private String asciiToUnicodeCallback(Matcher matches) {
+    private String replaceAsciiWithUnicode(String string, Matcher matcher) {
         ArrayList<String> matchList = new ArrayList<>();
-        while (matches.find()) {
-            matchList.add(matches.group(0));
+        while (matcher.find()) {
+            matchList.add(matcher.group(0));
         }
-        if(matchList.size()!=4) {
-            return "";
+        if(matchList.size()==0) {
+            return string;
         } else {
             LinkedHashMap<String, String> ascii_replace = this.ruleset.getAsciiReplace();
             LinkedHashMap<String, ArrayList<String>> shortcode_replace = this.ruleset.getShortcodeReplace();
-            String ascii = matchList.get(3);
-
-            String shortname = ascii_replace.get(ascii);
-            String uc_output = shortcode_replace.get(shortname).get(0);
-            return matchList.get(2) + this.convert(uc_output);
+            for(String ascii : matchList) {
+                try {
+                    if (ascii_replace.containsKey(ascii)) {
+                        string = string.replace(ascii, ascii_replace.get(ascii));
+                        if(shortcode_replace.containsKey(ascii_replace.get(ascii))) {
+                            string = string.replace(ascii_replace.get(ascii), shortcode_replace.get(ascii_replace.get(ascii)).get(0));
+                        }
+                    }
+                } catch (Exception e) {
+                    Log.e("replaceAsciiWithUnicode",e.getMessage());
+                }
+            }
+            return string;
         }
     }
-
 
     /**
      * @param   @matcher  results of the pattern.

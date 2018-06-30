@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         String result1 = client.toShort("Hello world! \uD83D\uDE04");
 
         // Convert shortnames to native unicode
-        String result2 = client.shortnameToUnicode(" <3 Hello world! :smile:");
+        String result2 = client.shortnameToUnicode("<3 Hello world! :smile:");
 
         // Convert native unicode emoji and shortnames directly to images
         String result3 = client.toImage("Hello world! :smile: \uD83D\uDE04");
