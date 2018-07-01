@@ -1,37 +1,26 @@
 package com.emojione.example;
 
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.Spannable;
 import android.text.SpannableStringBuilder;
-import android.text.style.ImageSpan;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.emojione.tools.Callback;
 import com.emojione.tools.Client;
 
 import java.io.IOException;
-import java.io.InputStream;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
-import butterknife.BindString;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-
 
 public class MainActivity extends AppCompatActivity {
 
     @BindView(R.id.editText) EditText editText;
     @BindView(R.id.textView) TextView textView;
 
-    Client client = new Client();
+    Client client;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,56 +28,62 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
-//        // Convert native unicode emoji to shortnames
-//        String string1 = client.toShort("Hello world! \uD83D\uDE04");
-//
-//        // Convert shortnames to native unicode
-//        String string2 = client.shortnameToUnicode(" <3 Hello world! :smile:");
-//
-//        // Convert native unicode emoji and shortnames directly to images
-//        SpannableStringBuilder textview1 = client.toImage("Hello world! :smile: \uD83D\uDE04");
-//
-//        // Convert native unicode emoji directly to images
-//        SpannableStringBuilder textview2 = client.unicodeToImage("Hello world! \uD83D\uDE04");
-//
-//        // Convert shortnames to images
-//        SpannableStringBuilder textview3 = client.shortnameToImage("Hello world! :smile:");
+        client = new Client(this);
 
-        //editText.setText("Hello world! \uD83D\uDE04");
-        editText.setText("Hello world! :joy: ");
+        editText.setText("Hello! \uD83D\uDE04 <3 :joy:");
     }
 
-    @OnClick({R.id.btnToImage, R.id.btnShortnameToImage,R.id.btnShortnameToUnicode,R.id.btnToShort,R.id.btnUnicodeToImage}) public void submit(Button view) {
-        client.shortnameToImage("Hello world! :smile:", new com.emojione.tools.Callback() {
-
-            @Override
-            public void onFailure(IOException e) {
-                String jason = "jason";
-            }
-
-            @Override
-            public void onSuccess(SpannableStringBuilder ssb) {
-                String jason = "jason";
-            }
-        });
-        String result = "";
+    @OnClick({R.id.btnToImage, R.id.btnShortnameToImage,R.id.btnShortnameToUnicode,R.id.btnToShortname,R.id.btnUnicodeToImage}) public void submit(Button view) {
+        String result;
         switch (view.getId()) {
-            case R.id.btnToImage:
-                //result = client.toImage(editText.getText().toString());
-                break;
-            case R.id.btnShortnameToImage:
-                //result = client.shortnameToImage(editText.getText().toString());
+            case R.id.btnToShortname:
+                // Convert native unicode emoji to shortnames
+                result = client.toShortname(editText.getText().toString());
+                textView.setText(result);
                 break;
             case R.id.btnShortnameToUnicode:
-                //result = client.shortnameToUnicode(editText.getText().toString());
+                // Convert shortnames to native unicode
+                result = client.shortnameToUnicode(editText.getText().toString());
+                textView.setText(result);
                 break;
-            case R.id.btnToShort:
-                //result = client.toShort(editText.getText().toString());
+            case R.id.btnToImage:
+                // Convert native unicode emoji and shortnames to images on a spannable string
+                client.toImage(editText.getText().toString(),100, new com.emojione.tools.Callback() {
+                    @Override
+                    public void onFailure(IOException e) {
+                        textView.setText(e.getMessage());
+                    }
+                    @Override
+                    public void onSuccess(final SpannableStringBuilder ssb) {
+                        textView.setText(ssb);
+                    }
+                });
+                break;
+            case R.id.btnShortnameToImage:
+                // Convert shortnames to images on a spannable string
+                client.shortnameToImage(editText.getText().toString(),100, new com.emojione.tools.Callback() {
+                    @Override
+                    public void onFailure(IOException e) {
+                        textView.setText(e.getMessage());
+                    }
+                    @Override
+                    public void onSuccess(final SpannableStringBuilder ssb) {
+                        textView.setText(ssb);
+                    }
+                });
                 break;
             case R.id.btnUnicodeToImage:
-                //result = client.unicodeToImage(editText.getText().toString());
-                break;
+                // Convert native unicode emoji to images on a spannable string
+                client.unicodeToImage(editText.getText().toString(),100, new com.emojione.tools.Callback() {
+                    @Override
+                    public void onFailure(IOException e) {
+                        textView.setText(e.getMessage());
+                    }
+                    @Override
+                    public void onSuccess(final SpannableStringBuilder ssb) {
+                        textView.setText(ssb);
+                    }
+                });
         }
-        //textView.setText(result);
     }
 }
