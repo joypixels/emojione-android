@@ -48,7 +48,7 @@ Internet is required to download the converted emoji.
 Please see [CONTRIBUTING.md](CONTRIBUTING.md) for more info on contributing to the emojione project. For artwork comments and questions please see the emojione-assets repo.
 
 ## Usage
-You'll find basic usage examples here in the [/EmojioneExamples/](EmojioneExample/) directory, and links to usage demos in [USAGE.md](USAGE.md).
+You'll find basic usage examples here in the [/EmojioneExamples/](EmojioneExamples/) directory, and links to usage demos in [USAGE.md](USAGE.md).
 
 
 ## Information
