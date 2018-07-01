@@ -1,12 +1,32 @@
 package com.emojione.tools;
 
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.text.Spannable;
+import android.text.SpannableStringBuilder;
+import android.text.style.ImageSpan;
 import android.util.Log;
+import android.widget.TextView;
 
+import com.androidnetworking.AndroidNetworking;
+import com.androidnetworking.common.ANRequest;
+import com.androidnetworking.common.ANResponse;
+import com.androidnetworking.error.ANError;
+
+import java.io.IOException;
+import java.io.InputStream;
 import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
 
 public class Client {
 
@@ -18,8 +38,6 @@ public class Client {
     private String emojiSize = "32";            //available sizes are '32', '64', and '128'
     private boolean greedyMatch = false;
     private String blacklistChars = "";
-    private boolean sprites = false;
-    private String spriteSize = "32";           // available sizes are '32' and '64'
     private String imagePathPNG = "https://cdn.jsdelivr.net/emojione/assets";
     private boolean imageTitleTag = true;
 
@@ -30,7 +48,6 @@ public class Client {
 
     public void Client() {
         this.imagePathPNG = this.imagePathPNG + "/" + this.emojiVersion + "/png/" + this.emojiSize + "/";
-        this.spriteSize = (this.spriteSize.equals("32") || this.spriteSize.equals("64")) ? this.spriteSize : "32";
     }
 
     /**
@@ -52,10 +69,10 @@ public class Client {
      * @param   @string  $string The input string.
      * @return  @string  String with appropriate html for rendering emoji.
      */
-    public String toImage(String string) {
-        string = unicodeToImage(string);
-        string = shortnameToImage(string);
-        return string;
+    public SpannableStringBuilder toImage(String string) {
+        //TextView textview = unicodeToImage(string);
+        //textview = shortnameToImage(textview.getText().toString());
+        return new SpannableStringBuilder();
     }
 
     /**
@@ -89,21 +106,86 @@ public class Client {
      * @param   @string  $string The input string.
      * @return  @string  String with appropriate html for rendering emoji.
      */
-    public String shortnameToImage(String string) {
-        if(this.shortcodes) {
-            Pattern pattern = Pattern.compile(this.shortnameRegexp);
-            Matcher matches = pattern.matcher(string);
-            string = shortnameToImageCallback(matches);
-        }
-        if (this.ascii) {
-            String asciiRegexp = this.ruleset.getAsciiRegexp();
-            String asciiRX = (this.riskyMatchAscii) ? "|(()" + asciiRegexp + "())" : "|((\\s|^)"+asciiRegexp+"(?=\\s|$|[!,.?]))";
+    public SpannableStringBuilder shortnameToImage(String string, final TextView textview, final Context context) {
+        OkHttpClient client = new OkHttpClient();
 
-            Pattern pattern = Pattern.compile(asciiRX);
-            Matcher matches = pattern.matcher(string);
-            string = asciiToImageCallback(matches);
-        }
-        return string;
+        Request request = new Request.Builder()
+                .url("https://cdn.jsdelivr.net/emojione/assets/3.1/png/128/1f469-2764-1f48b-1f468.png")
+                .build();
+
+        client.newCall(request).enqueue(new Callback() {
+            @Override
+            public void onFailure(Call call, IOException e) {
+                e.printStackTrace();
+            }
+
+            @Override
+            public void onResponse(Call call, final Response response) throws IOException {
+                if (!response.isSuccessful()) {
+                    throw new IOException("Unexpected code " + response);
+                } else {
+//                    context.this.runOnUiThread(new Runnable() {
+//                        @Override
+//                        public void run() {
+                    InputStream inputStream = response.body().byteStream();
+                    Bitmap smiley = BitmapFactory.decodeStream(inputStream);
+//
+                    SpannableStringBuilder ssb = new SpannableStringBuilder("Here's a smiley  ");
+                    //Bitmap smiley = BitmapFactory.decodeResource( getResources(), R.drawable.emoticon );
+                    ssb.setSpan(new ImageSpan(smiley), 16, 17, Spannable.SPAN_INCLUSIVE_INCLUSIVE);
+//                    textview.setText(ssb.toString());
+//                        }
+//                    });
+                }
+            }
+        });
+
+//        SpannableStringBuilder ssb = new SpannableStringBuilder("Here's a smiley  ");
+//        try {
+//
+//            OkHttpClient client = new OkHttpClient();
+//            Request request = new Request.Builder()
+//                    .url("https://cdn.jsdelivr.net/emojione/assets/3.1/png/128/1f469-2764-1f48b-1f468.png")
+//                    .build();
+//
+//            Call call = client.newCall(request);
+//            Response response = call.execute();
+//
+//            client.newCall(request).enqueue(new Callback() {
+//                @Override
+//                public void onFailure(Request request, IOException e) {
+//                    Log.e("tet", e.toString());
+//                }
+//                @Override
+//                public void onResponse(Response response) throws IOException {
+//                    Log.w("tet", response.body().string());
+//                    Log.i("tet", response.toString());
+//                }
+//            });
+
+//            InputStream inputStream = response.body().byteStream();
+//            Bitmap smiley = BitmapFactory.decodeStream(inputStream);
+//
+//            //SpannableStringBuilder ssb = new SpannableStringBuilder("Here's a smiley  ");
+//            //Bitmap smiley = BitmapFactory.decodeResource( getResources(), R.drawable.emoticon );
+//            ssb.setSpan(new ImageSpan(smiley), 16, 17, Spannable.SPAN_INCLUSIVE_INCLUSIVE);
+
+//        } catch (Exception e) {
+//            Log.e("tet",e.getMessage());
+//        }
+
+//        if (this.ascii) {
+//            String asciiRegexp = this.ruleset.getAsciiRegexp();
+//            String asciiRX = (this.riskyMatchAscii) ? "|(()" + asciiRegexp + "())" : "|((\\s|^)"+asciiRegexp+"(?=\\s|$|[!,.?]))";
+//
+//            Pattern pattern = Pattern.compile(asciiRX);
+//            Matcher matcher = pattern.matcher(string);
+//            string = replaceAsciiWithShortname(string, matcher);
+//        }
+//        Pattern pattern = Pattern.compile(this.shortnameRegexp);
+//        Matcher matches = pattern.matcher(string);
+//        //TextView textView = shortnameToImageCallback(matches);
+        return new SpannableStringBuilder();
     }
 
     /**
@@ -112,10 +194,10 @@ public class Client {
      * @param   @string  $string The input string.
      * @return  @string  String with appropriate html for rendering emoji.
      */
-    public String unicodeToImage(String string) {
+    public SpannableStringBuilder unicodeToImage(String string) {
         Pattern pattern = Pattern.compile(this.unicodeRegexp);
         Matcher matcher = pattern.matcher(string);
-        string = this.replaceUnicodeWithShortname(string, matcher);
+        string = this.replaceUnicodeWithImage(string, matcher);
         if(this.ascii) {
             String asciiRegexp = this.ruleset.getAsciiRegexp();
             String asciiRX = (this.riskyMatchAscii) ? "|(()" + asciiRegexp + "())" : "|((\\s|^)"+asciiRegexp+"(?=\\s|$|[!,.?]))";
@@ -124,7 +206,7 @@ public class Client {
             matcher = pattern.matcher(string);
             string = replaceAsciiWithUnicode(string, matcher);
         }
-        return string;
+        return new SpannableStringBuilder();
     }
 
     /**
@@ -173,12 +255,7 @@ public class Client {
                 alt = shortname;
             }
 
-            if(this.sprites) {
-                return "<span class=\"emojione emojione-" + this.spriteSize + "-" + category + " _" + filename + "\" " + titleTag + ">" + alt + "</span>";
-            }
-            else {
-                return "<img class=\"emojione\" alt=\"" + alt + "\" " + titleTag + " src=\"" + this.imagePathPNG + filename + ".png\"/>";
-            }
+            return "<img class=\"emojione\" alt=\"" + alt + "\" " + titleTag + " src=\"" + this.imagePathPNG + filename + ".png\"/>";
         }
     }
 
@@ -257,6 +334,33 @@ public class Client {
 
     /**
      * @param   @matcher  results of the pattern.
+     * @return  @string  Unicode replacement result.
+     */
+    private String replaceAsciiWithShortname(String string, Matcher matcher) {
+        ArrayList<String> matchList = new ArrayList<>();
+        while (matcher.find()) {
+            matchList.add(matcher.group(0));
+        }
+        if(matchList.size()==0) {
+            return string;
+        } else {
+            LinkedHashMap<String, String> ascii_replace = this.ruleset.getAsciiReplace();
+            LinkedHashMap<String, ArrayList<String>> shortcode_replace = this.ruleset.getShortcodeReplace();
+            for(String ascii : matchList) {
+                try {
+                    if (ascii_replace.containsKey(ascii)) {
+                        string = string.replace(ascii, ascii_replace.get(ascii));
+                    }
+                } catch (Exception e) {
+                    Log.e("replaceAsciiWithUnicode",e.getMessage());
+                }
+            }
+            return string;
+        }
+    }
+
+    /**
+     * @param   @matcher  results of the pattern.
      * @return  @string  Image HTML replacement result.
      */
     private String asciiToImageCallback(Matcher matches)
@@ -287,13 +391,8 @@ public class Client {
                 } else {
                     alt = URLEncoder.encode(ascii);
                 }
-                if (this.sprites)
-                {
-                    return matchList.get(2) + "<span class=\"emojione emojione-" + this.spriteSize + "-" + category + " _" + filename + "\" " + titleTag + ">" + alt + "</span>";
-                } else
-                {
-                    return matchList.get(2) + "<img class=\"emojione\" alt=\"" + alt + "\" " + titleTag + " src=\"" + this.imagePathPNG + filename + ".png\"/>";
-                }
+
+                return matchList.get(2) + "<img class=\"emojione\" alt=\"" + alt + "\" " + titleTag + " src=\"" + this.imagePathPNG + filename + ".png\"/>";
             }
         }
     }
@@ -334,57 +433,63 @@ public class Client {
      * @param   @matcher  results of the pattern.
      * @return  @string  Image HTML replacement result.
      */
-    private String unicodeToImageCallback(Matcher matches)
-    {
+    private String replaceUnicodeWithImage(String string, Matcher matcher) {
         ArrayList<String> matchList = new ArrayList<>();
-        while (matches.find()) {
-            matchList.add(matches.group(0));
+        while (matcher.find()) {
+            matchList.add(matcher.group(0));
         }
         if(matchList.size()==0) {
-            return "";
+            return string;
         } else {
             LinkedHashMap<String, ArrayList<String>> shortcode_replace = this.ruleset.getShortcodeReplace();
             LinkedHashMap<String, String> unicode_replace = this.ruleset.getUnicodeReplace();
             LinkedHashMap<String, String> unicode_replace_greedy = this.ruleset.getUnicodeReplaceGreedy();
 
-            String unicode = matchList.get(0).toUpperCase();
+            for(String unicode : matchList) {
+                try {
+                    // Is the unicode blacklisted
+                    String[] bList = this.blacklistChars.split(",");
+                    boolean blacklisted = false;
+                    for(String blacklistItem : bList) {
+                        if(blacklistItem.equals(unicode)) {
+                            blacklisted = true;
+                        }
+                    }
+                    if(!blacklisted) {
+                        String shortname = "";
+                        StringBuilder stringBuilder = new StringBuilder();
+                        byte[] xxx = unicode.getBytes("UTF-8");
+                        String hexString = "";
+                        for (byte x : xxx) {
+                            stringBuilder.append(String.format("%02X", x));
+                        }
+                        if (unicode_replace.containsKey(stringBuilder.toString())) {
+                            shortname = unicode_replace.get(stringBuilder.toString());
+                        } else if (this.greedyMatch && unicode_replace_greedy.containsKey(stringBuilder.toString())) {
+                            shortname = unicode_replace_greedy.get(stringBuilder.toString());
+                        } else {
+                            shortname = unicode;
+                        }
+                        String filename = shortcode_replace.get(shortname).get(1);
+                        String category = !filename.contains("-1f3f") ? "diversity" : shortcode_replace.get(shortname).get(3);
+                        String titleTag = this.imageTitleTag ? "title=\"" + URLEncoder.encode(shortname) + "\"" : "";
 
-            String[] bList = this.blacklistChars.split(",");
+                        String alt = "";
+                        if(this.unicodeAlt) {
+                            alt = unicode;
+                        } else {
+                            alt = shortname;
+                        }
 
-            boolean found = false;
-            for(int i=0; i<bList.length; i++) {
-                if(bList[i].equals(unicode)) {
-                    found = true;
+                        return "<img class=\"emojione\" alt=\"" + alt + "\" " + titleTag + " src=\"" + this.imagePathPNG + filename + ".png\"/>";
+                    }
+                } catch (Exception e) {
+                    Log.e("MatchesWithShortnam",e.getMessage());
+                    return "";
                 }
             }
-
-            String shortname = "";
-            if(unicode_replace.containsKey(unicode) && !found) {
-                shortname = unicode_replace.get(unicode);
-            } else if (this.greedyMatch && unicode_replace_greedy.containsKey(unicode) && !found) {
-                shortname = unicode_replace_greedy.get(unicode);
-            } else {
-                return unicode;
-            }
-
-            String filename = shortcode_replace.get(shortname).get(2);
-            String category = filename.contains("-1f3f") == false ? "diversity" : shortcode_replace.get(shortname).get(3);
-            String titleTag = this.imageTitleTag ? "title=\"" + URLEncoder.encode(shortname) + "\"" : "";
-
-            String alt = "";
-            if(this.unicodeAlt) {
-                alt = unicode;
-            } else {
-                alt = shortname;
-            }
-
-            if(this.sprites) {
-                return "<span class=\"emojione emojione-" + this.spriteSize + "-" + category + " _" + filename + "\" " + titleTag + ">" + alt + "</span>";
-            }
-            else {
-                return "<img class=\"emojione\" alt=\"" + alt + "\" " + titleTag + " src=\"" + this.imagePathPNG + filename + ".png\"/>";
-            }
         }
+        return "";
     }
 
     /**
@@ -480,18 +585,6 @@ public class Client {
     }
     public void setBlacklistChars(String blacklistChars) {
         this.blacklistChars = blacklistChars;
-    }
-    public boolean isSprites() {
-        return sprites;
-    }
-    public void setSprites(boolean sprites) {
-        this.sprites = sprites;
-    }
-    public String getSpriteSize() {
-        return spriteSize;
-    }
-    public void setSpriteSize(String spriteSize) {
-        this.spriteSize = spriteSize;
     }
     public String getImagePathPNG() {
         return imagePathPNG;
