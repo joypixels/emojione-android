@@ -28,7 +28,7 @@ public class Client {
     private boolean ascii = true;                // convert ascii smileys? =)
     private boolean riskyMatchAscii = true;      // set true to match ascii without leading/trailing space char
     private boolean shortcodes = true;           // convert shortcodes? :joy:
-    private boolean greedyMatch = false;
+    private boolean greedyMatch = false;         // when true, matches non-fully-qualified Unicode values
 
     private String imagePathPNG = "https://cdn.jsdelivr.net/emojione/assets/";
     private String emojiVersion = "3.1";
@@ -360,8 +360,7 @@ public class Client {
     }
 
     /**
-     * @param   @matcher  results of the pattern.
-     * @return  @string  shortname result
+     * Replaces all unicode instances with its shortname equivalent.
      */
     private String replaceUnicodeWithShortname(String string, Matcher matcher) {
         ArrayList<String> matchList = new ArrayList<>();
