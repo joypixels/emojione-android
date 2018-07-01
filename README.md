@@ -1,15 +1,14 @@
 # ![EmojiOne Logo](https://www.emojione.com/images/vectors/emojione-typeface.svg)
 
-> [![Version](https://img.shields.io/cocoapods/v/emojione-ios.svg?style=flat)](https://cocoapods.org/pods/emojione-ios)
-[![License](https://img.shields.io/cocoapods/l/emojione-ios.svg?style=flat)](https://cocoapods.org/pods/emojione-ios)
-[![Platform](https://img.shields.io/cocoapods/p/emojione-ios.svg?style=flat)](https://cocoapods.org/pods/emojione-ios)
+> [![Release](https://jitpack.io/v/jasonamark/emojione-android.svg)](https://github.com/jasonamark/emojione-android)
+[![License](https://img.shields.io/cocoapods/l/emojione-ios.svg?style=flat)](LICENSE.md)
 
-**EmojiOne iOS library** to help users find and replace native system emojis with EmojiOne in thier iOS app.
+**EmojiOne Android library** to help users find and replace native system emojis with EmojiOne in thier Android app.
 
 
 ## What's Included?
 
- - This project includes a Swift library used to convert emoji into various formats, including conversion to EmojiOne emoji images.
+ - This project includes a Java library used to convert emoji into various formats, including conversion to EmojiOne emoji images.
  - The library included here are available free under the MIT license.  Please check the [LICENSE.md](LICENSE.md) file for more details.
  
  
@@ -24,13 +23,26 @@
 
 ## Installation
 
-emojione-ios is available through [CocoaPods](https://cocoapods.org). To install
-it, simply add the following line to your Podfile:
+emojione-android is available through [JitPack](https://jitpack.io). To install
+it, simply add the following line to your build.gradle:
 
-```ruby
-pod 'emojione-ios'
+```gradle
+allprojects {
+    repositories {
+        maven { url "https://jitpack.io" }
+    }
+}
+dependencies {
+    implementation 'com.github.jasonamark:emojione-android:1.1.1'
+}
+```
+and in your manifest add:
+
+```gradle
+<uses-permission android:name="android.permission.INTERNET" />
 ```
 
+Internet is required to download the converted emoji. 
 
 ## Contributing
 Please see [CONTRIBUTING.md](CONTRIBUTING.md) for more info on contributing to the emojione project. For artwork comments and questions please see the emojione-assets repo.
@@ -45,7 +57,7 @@ You'll find basic usage examples here in the [/EmojioneExamples/](EmojioneExampl
 
 If you discover any bugs, feel free to create an issue on GitHub. We also welcome the open-source community to contribute to the project by forking it and issuing pull requests.
 
- *  [https://github.com/zenkimoto/emojione-ios/issues](https://github.com/zenkimoto/emojione-ios/issues)
+ *  [https://github.com/jasonamark/emojione-android/issues](https://github.com/jasonamark/emojione-android/issues)
 
 
 ### Contact
