@@ -391,51 +391,10 @@ public class Client {
         }
     }
 
-    /**
-     * Converts from unicode to hexadecimal NCR.
-     *
-     * @param   @string  unicode characters
-     * @return  @string  hexadecimal NCR
-     * */
-    private String convert(String unicode)
-    {
-        String[] items = unicode.split("-");
-        if(items.length>0) {
-            return "&#x"+implode(items,"&#x")+";";
-        } else {
-            return "&#x"+unicode+";";
-        }
-    }
-
-    /**
-     * Join array elements with a string
-     *
-     * @param @string[] elements
-     * @param @string   string to join them with
-     */
-    private String implode(String[] items, String separator) {
-        if (items == null || items.length==0) {
-            return null;
-        }
-        String delimiter = "";
-        StringBuilder builder = new StringBuilder();
-        for (String item : items) {
-            builder.append(delimiter).append(item);
-            delimiter = separator;
-        }
-        return builder.toString();
-    }
-
     private String hexStringToCodePoint(String hexString) {
         int codePoint = Integer.parseInt(hexString, 16 );
         return new String(new int[]{codePoint}, 0, 1);
     }
-
-    /**
-     * Get the Ruleset
-     *
-     * @return RulesetInterface The Ruleset
-     */
 
     public boolean isAscii() {
         return ascii;
