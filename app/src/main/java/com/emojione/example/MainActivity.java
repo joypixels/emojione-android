@@ -30,6 +30,11 @@ public class MainActivity extends AppCompatActivity {
 
         client = new Client(this);
 
+        client.setAscii(true);              // convert ascii smileys? =)
+        client.setShortcodes(true);         // convert shortcodes? :joy:
+        client.setGreedyMatch(true);        // true enables less strict unicode matching
+        client.setRiskyMatchAscii(true);    // match ascii without leading/trailing space character
+
         editText.setText("Hello! \uD83D\uDE04 <3 :joy:");
     }
 
