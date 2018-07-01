@@ -1,15 +1,22 @@
 package com.emojione.example;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Spannable;
 import android.text.SpannableStringBuilder;
+import android.text.style.ImageSpan;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.emojione.tools.Callback;
 import com.emojione.tools.Client;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -52,7 +59,18 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @OnClick({R.id.btnToImage, R.id.btnShortnameToImage,R.id.btnShortnameToUnicode,R.id.btnToShort,R.id.btnUnicodeToImage}) public void submit(Button view) {
-        SpannableStringBuilder textview3 = client.shortnameToImage("Hello world! :smile:", textView, this);
+        client.shortnameToImage("Hello world! :smile:", new com.emojione.tools.Callback() {
+
+            @Override
+            public void onFailure(IOException e) {
+                String jason = "jason";
+            }
+
+            @Override
+            public void onSuccess(SpannableStringBuilder ssb) {
+                String jason = "jason";
+            }
+        });
         String result = "";
         switch (view.getId()) {
             case R.id.btnToImage:

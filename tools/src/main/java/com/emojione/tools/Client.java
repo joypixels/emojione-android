@@ -106,7 +106,8 @@ public class Client {
      * @param   @string  $string The input string.
      * @return  @string  String with appropriate html for rendering emoji.
      */
-    public SpannableStringBuilder shortnameToImage(String string, final TextView textview, final Context context) {
+    public SpannableStringBuilder shortnameToImage(String string, final com.emojione.tools.Callback callback) {
+
         OkHttpClient client = new OkHttpClient();
 
         Request request = new Request.Builder()
@@ -124,6 +125,8 @@ public class Client {
                 if (!response.isSuccessful()) {
                     throw new IOException("Unexpected code " + response);
                 } else {
+
+
 //                    context.this.runOnUiThread(new Runnable() {
 //                        @Override
 //                        public void run() {
@@ -136,6 +139,7 @@ public class Client {
 //                    textview.setText(ssb.toString());
 //                        }
 //                    });
+                    callback.onSuccess(ssb);
                 }
             }
         });
