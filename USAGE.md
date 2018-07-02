@@ -30,7 +30,7 @@ Take input containing shortnames and translate it directly to EmojiOne images fo
 
 **`client.shortnameToUnicode(string) -> String`** - _shortname -> native unicode emoji_
 
-Take input containing only shortnames and translate it directly to Unicode Emoji (when displaying the unified input to clients).
+Take input containing shortnames and translate it directly to Unicode Emoji (when displaying the unified input to clients).
 
 **`client.unicodeToImage(string, imageSize, callback) -> SpannableStringBuilder`** - _native unicode -> images_
 
@@ -38,5 +38,5 @@ Take native unicode emoji input and translate it directly to EmojiOne images for
 
 **`client.toImage(string, imageSize, callback) -> SpannableStringBuilder`** - _native unicode + shortnames -> images_
 
-Takes a string containing both native unicode emoji and shortnames, and translate it into EmojiOne images for display in a spannable string. An imageSize parameter is used to set the size of the emoji images within the spannable string. A callback is made when all emoji have been retrieved from the `imagePathPNG` CDN.
+Take a string containing both native unicode emoji and shortnames, and translate it into EmojiOne images for display in a spannable string. An imageSize parameter is used to set the size of the emoji images within the spannable string. A callback is made when all emoji have been retrieved from the `imagePathPNG` CDN.
 

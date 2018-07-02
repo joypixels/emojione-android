@@ -1,6 +1,6 @@
 # ![EmojiOne Logo](https://www.emojione.com/images/vectors/emojione-typeface.svg)
 
-[![Release](https://jitpack.io/v/jasonamark/emojione-android.svg)](https://github.com/jasonamark/emojione-android)
+> [![Release](https://jitpack.io/v/jasonamark/emojione-android.svg)](https://github.com/jasonamark/emojione-android)
 [![License](https://img.shields.io/cocoapods/l/emojione-ios.svg?style=flat)](LICENSE.md)
 
 **EmojiOne Android library** to help users find and replace native system emojis with EmojiOne in thier Android app.
