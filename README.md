@@ -1,6 +1,6 @@
 # ![EmojiOne Logo](https://www.emojione.com/images/vectors/emojione-typeface.svg)
 
-> [![Release](https://jitpack.io/v/jasonamark/emojione-android.svg)](https://github.com/jasonamark/emojione-android)
+> [![Release](https://jitpack.io/v/emojione/emojione-android.svg)](https://github.com/emojione/emojione-android)
 [![License](https://img.shields.io/cocoapods/l/emojione-ios.svg?style=flat)](LICENSE.md)
 
 **EmojiOne Android library** to help users find and replace native system emojis with EmojiOne in thier Android app.
@@ -33,7 +33,7 @@ allprojects {
     }
 }
 dependencies {
-    implementation 'com.github.jasonamark:emojione-android:1.1.1'
+    implementation 'com.github.emojione:emojione-android:3.1.0'
 }
 ```
 and in your manifest add:
@@ -57,7 +57,7 @@ You'll find basic usage examples here in the [/EmojioneExamples/](EmojioneExampl
 
 If you discover any bugs, feel free to create an issue on GitHub. We also welcome the open-source community to contribute to the project by forking it and issuing pull requests.
 
- *  [https://github.com/jasonamark/emojione-android/issues](https://github.com/jasonamark/emojione-android/issues)
+ *  [https://github.com/emojione/emojione-android/issues](https://github.com/emojione/emojione-android/issues)
 
 
 ### Contact
@@ -66,5 +66,5 @@ If you have any questions, comments, or concerns you are welcome to contact us.
 
 *  [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/emojione/emojione?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 * [support@emojione.com](mailto:support@emojione.com)
-* [http://emojione.com](http://emojione.com)
+* [https://www.emojione.com](https://www.emojione.com)
 * [https://twitter.com/emojione](https://twitter.com/emojione)
