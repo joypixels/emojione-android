@@ -1,3 +1,6 @@
+# This repository is now maintained as JoyPixels/emoji-toolkit-android.
+You'll find the latest version of our resources at [emoji-toolkit-android](https://github.com/joypixels/emoji-toolkit-android).
+
 # ![EmojiOne Logo](https://www.emojione.com/images/vectors/emojione-typeface.svg)
 
 > [![Release](https://jitpack.io/v/emojione/emojione-android.svg)](https://github.com/emojione/emojione-android)
